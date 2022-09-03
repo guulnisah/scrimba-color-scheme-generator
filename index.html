@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Palette</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Find your palette</h1>
+        <p>Choose the color then choose the scheme mode. </p>
+        <p>Click on the color to copy to clipboard.</p>
+    </header>
+    <section class="container">
+        <div class="container__generator">
+            <input id="color-input" type="color">
+            <select id="scheme-options">
+                <option value="monochrome" selected>Monochrome</option>
+                <option value="monochrome-dark">Monochrome-dark</option>
+                <option value="monochrome-light">Monochrome-light</option>
+                <option value="analogic">Analogic</option>
+                <option value="complement">Complement</option>
+                <option value="analogic-complement">Analogic-complement</option>
+                <option value="triad">Triad</option>
+            </select>
+            <input id="submit-button" type="submit" value="Get your scheme">
+        </div>
+        <div class="container__colors">
+
+            <div class="color-box">
+                <div class="color-content color-content-1"></div>
+                <p class="color-code color-code-1">#F55A5A</p>
+            </div>
+            <div class="color-box">
+                <div class="color-content color-content-2"></div>
+                <p class="color-code color-code-2">#2B283A</p>
+            </div>
+            <div class="color-box">
+                <div class="color-content color-content-3"></div>
+                <p class="color-code color-code-3">#FBF3AB</p>
+            </div>
+            <div class="color-box">
+                <div class="color-content color-content-4"></div>
+                <p class="color-code color-code-4">#AAD1B6</p>
+            </div>
+            <div class="color-box">
+                <div class="color-content color-content-5"></div>
+                <p class="color-code color-code-5">#A626D3</p>
+            </div>
+
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>

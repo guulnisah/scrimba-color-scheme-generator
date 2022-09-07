@@ -5,26 +5,21 @@ const colorContents = document.querySelectorAll('.color-content')
 const colorCodes = document.querySelectorAll('.color-code')
 const colorBoxes = document.querySelectorAll('.color-box')
 
-submitBtn.addEventListener('click', (e) => {
+submitBtn.addEventListener('click', async () => {
     const schemeValue = schemeSelect.options[schemeSelect.selectedIndex].value
     const colorValue = colorInput.value.slice(1, 7);
 
-    fetch(`https://www.thecolorapi.com/scheme?hex=${colorValue}&mode=${schemeValue}&count=5`)
-        .then((response) => response.json())
-        .then((data) => {
-
-            colorContents.forEach((elem, index) => {
-                let color = data.colors[index]
-                elem.style.backgroundColor = color.hex.value
-            })
-
-            colorCodes.forEach((elem, index) => {
-                let color = data.colors[index]
-                elem.textContent = color.hex.value
-            })
-
-        });
-})
+    const response = await fetch(`https://www.thecolorapi.com/scheme?hex=${colorValue}&mode=${schemeValue}&count=5`)
+    const data = await response.json()
+    colorContents.forEach((elem, index) => {
+        let color = data.colors[index]
+        elem.style.backgroundColor = color.hex.value
+    })
+    colorCodes.forEach((elem, index) => {
+        let color = data.colors[index]
+        elem.textContent = color.hex.value
+    })
+});
 
 colorBoxes.forEach((elem) => {
     elem.addEventListener('click', () => {
